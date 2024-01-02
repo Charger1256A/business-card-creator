@@ -12,6 +12,7 @@ function App() {
   const [position, setPosition] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [color, setColor] = useColor("#fff8f8");
+  const [logo, setLogo] = useState(null);
 
 
   const handleFullName = (newName) => {
@@ -34,6 +35,10 @@ function App() {
     setColor(newColor);
   }
 
+  const handleLogo = (newLogo) => {
+    setLogo(newLogo)
+  }
+
   return (
       <Grid container spacing={2}>
         <Grid item xs={6}>
@@ -48,6 +53,8 @@ function App() {
             updatePhoneNumber={handlePhoneNumber}
             color={color}
             updateColor={handleColor}
+            logo={logo}
+            updateLogo={handleLogo}
           />
         </Grid>
         <Grid item xs={6}>
@@ -57,6 +64,7 @@ function App() {
             position={position}
             phoneNumber={phoneNumber}
             color={color}
+            logo={logo}
           />
         </Grid>
       </Grid>
